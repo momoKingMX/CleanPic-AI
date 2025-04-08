@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Image Object Removal Tool - Remove unwanted objects from your images with our AI-powered tool">
+    <meta name="keywords" content="AI, image editing, object removal, photo editing, AI image tool">
+    <title>CleanPic AI</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <!-- 苹果风格设计字体 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap">
+    <!-- 网站图标 -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <h1>CleanPic AI</h1>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#how-it-works">How it Works</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main class="main-container">
+        <!-- 编辑器嵌入区域 -->
+        <section class="editor-section" id="editor-section">
+            <div class="editor-container">
+                <h2>Remove Unwanted Objects From Your Images</h2>
+                <p class="editor-description">Upload an image, mark the objects you want to remove, and our AI will do the rest!</p>
+                
+                <!-- Cleanup.pictures嵌入iframe -->
+                <div class="iframe-container">
+                    <iframe src="https://cleanup.pictures" title="AI Object Removal Tool" id="cleanup-iframe"></iframe>
+                </div>
+                
+                <!-- 在iframe加载时显示加载动画 -->
+                <div class="iframe-loading" id="iframe-loading">
+                    <div class="loader"></div>
+                    <p>Loading image editor...</p>
+                </div>
+                
+                <!-- iframe加载失败时显示 -->
+                <div class="iframe-error hidden" id="iframe-error">
+                    <h3>Editor failed to load</h3>
+                    <p>Please <a href="https://cleanup.pictures" target="_blank">click here</a> to open the tool in a new window</p>
+                    <button class="button primary" id="reload-iframe">Try Again</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 使用提示区 -->
+        <section class="tips-section">
+            <div class="container">
+                <h2>Tips for Best Results</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <img src="assets/brush-icon.svg" alt="Brush icon">
+                        </div>
+                        <h3>Accurate Marking</h3>
+                        <p>Carefully mark the exact objects you want to remove for the best results.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <img src="assets/eraser-icon.svg" alt="Eraser icon">
+                        </div>
+                        <h3>Use Eraser</h3>
+                        <p>If you mark too much, use the eraser to refine your selection.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                        </div>
+                        <h3>Complex Backgrounds</h3>
+                        <p>For complex backgrounds, you may need to make multiple attempts.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        </div>
+                        <h3>Save Your Results</h3>
+                        <p>Remember to download your edited image when you're done.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 如何工作区域 -->
+        <section class="how-it-works" id="how-it-works">
+            <div class="section-content">
+                <h2>How It Works</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-icon">
+                            <img src="assets/upload-step.svg" alt="Upload">
+                        </div>
+                        <h3>Upload</h3>
+                        <p>Upload your image through drag and drop or by browsing your files.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <img src="assets/mark-step.svg" alt="Mark">
+                        </div>
+                        <h3>Mark</h3>
+                        <p>Use the brush tool to paint over objects you want to remove.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <img src="assets/process-step.svg" alt="Process">
+                        </div>
+                        <h3>Process</h3>
+                        <p>Our AI will process your image and remove the marked objects.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <img src="assets/download-step.svg" alt="Download">
+                        </div>
+                        <h3>Download</h3>
+                        <p>Download your edited image without the unwanted objects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于区域 -->
+        <section class="about" id="about">
+            <div class="section-content">
+                <h2>About CleanPic AI</h2>
+                <p>Our AI image editing tool allows you to simply brush over and intelligently remove any unwanted objects from your photos, achieving professional-level image cleanup and background erasing effects.</p>
+                <div class="attribution">
+                    <p>Object removal powered by <a href="https://cleanup.pictures" target="_blank">Cleanup.pictures</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 CleanPic AI. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript文件 -->
+    <script src="scripts/iframe-handler.js"></script>
+</body>
+</html> 
